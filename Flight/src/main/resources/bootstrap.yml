@@ -1,0 +1,16 @@
+server:
+  port: 8114 
+spring:
+ application:
+  name: Flight
+ cloud:
+   consul:
+    discovery:
+      hostname: localhost
+      health-check-url: http://localhost:8114/vGo/flight/actuator/health
+    config:
+        enabled: true
+        prefixes: config
+        defaultContext: application
+        profileSeparator: '::'
+        format: YAML

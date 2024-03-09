@@ -1,0 +1,16 @@
+server:
+  port: 8119
+spring:
+ application:
+  name: Booking
+ cloud:
+    consul:
+     discovery:
+      hostname: localhost
+      health-check-url: http://localhost:8119/vGo/flight/booking/actuator/health
+     config:
+        enabled: true
+        prefixes: config
+        defaultContext: application
+        profileSeparator: '::'
+        format: YAML

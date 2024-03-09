@@ -1,0 +1,16 @@
+server:
+  port: 8113 
+spring:
+ application:
+  name: User
+ cloud:
+   consul:
+    discovery:
+     hostname: localhost
+     health-check-url: http://localhost:8113/vGo/actuator/health
+    config:
+        enabled: true
+        prefixes: config
+        defaultContext: application
+        profileSeparator: '::'
+        format: YAML
